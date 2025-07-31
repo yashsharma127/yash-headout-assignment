@@ -88,6 +88,19 @@
 - Have EC2 instance ID which is running the containerized application on port 9000
 - After ALB creation, the security group created for the ALB will be added to the EC2 instance’s inbound rules, allowing traffic on port 9000 only from the ALB security group (for secure access control)
 
+### Parameters Set & Why (Load Balancer)
+
+- **Port 80 (load balancer):** Standard for HTTP exposure; allows users to access via browsers without needing to specify a port.
+- **Target group on port 9000 (HTTP):** Matches the application/server port, so the ALB can forward requests directly to your service.
+- **Health checks:** On `/` with code 200, ensures the ALB routes traffic only to healthy targets, improving reliability.
+- **Public subnets:** Used for external access; recommended for internet-facing ALB to make the app reachable globally.
+- **Security groups:** Open to the world for testing; in production, EC2 port 9000 should be restricted to accept traffic only from the ALB security group for enhanced security.
+
+### Parameters Not Set (and Why)
+
+- **HTTPS/SSL termination:** Not set yet for simplicity and to keep the setup easier to test.
+- **Session stickiness, WAF, advanced logging:** Not configured to keep the example minimal and focused.
+
 ---
 
 ## Additional Assumptions and Considerations
