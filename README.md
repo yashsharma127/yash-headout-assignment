@@ -1,4 +1,4 @@
-# Project Documentation for Containerized Java Application with AWS ELB and CI/CD Pipeline
+# Project Documentation for Setup script, Containerizing Java Application with AWS ELB and CI/CD Pipeline
 
 ---
 
