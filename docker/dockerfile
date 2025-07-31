@@ -1,0 +1,9 @@
+FROM eclipse-temurin:17-jre-alpine
+
+WORKDIR /app
+
+COPY build/libs/project.jar ./project.jar
+
+EXPOSE 9000
+
+ENTRYPOINT ["java", "-jar", "project.jar"]
