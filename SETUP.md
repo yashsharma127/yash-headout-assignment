@@ -1,4 +1,4 @@
-# Setup Guide: Java Application Deployment with Containerization, ELB, and CI/CD
+# Setup Guide: Java Application Setup, Deployment with Containerization, ELB, and CI/CD
 
 ## Prerequisites
 
